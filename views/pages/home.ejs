@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ('./partials/header.ejs') %>
+  </head> 
+  <body>
+    <h1>Welcome!</h1>
+    
+    <h2>Oh shoot, look at this cool link</h2>
+    <a id="link1" href="/supercoolmembersonlypage">Super Cool Link; Don't you wanna try it</a>
+
+    <div class="forms">
+      <div class="conts">
+        <div class="container">
+          <h2>Create Account</h2>
+          <form id="createUser" action="/create" method="POST">
+            <label for="username">Username: </label>
+            <input type="text" class="createUser" name="username"> <br>
+            <label for="password">Password: </label>
+            <input type="text" class="createUser" name="password"> <br>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <% if(error) { %>
+        <p><%= error %></p>
+        <% } %>
+      </div>  
+
+      <div class="conts">
+        <div class="container">
+          <h2>Login</h2>
+          <form id="login" action="/login" method="POST">
+            <label for="username">Username: </label>
+            <input type="text" class="loginCreds" name="username"> <br>
+            <label for="password">Password: </label>
+            <input type="text" class="loginCreds" name="password"> <br>
+            <button type="submit">Login</button>
+          </form>
+        </div>
+        <% if(lError) { %>
+          <p><%= lError %></p>
+        <% } %> 
+      </div>
+    </div>  
+  </body>
+</html>
